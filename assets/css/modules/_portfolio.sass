@@ -2,9 +2,10 @@
   display: flex
   width: 100%
   flex-wrap: wrap
-  justify-content: space-around
+  justify-content: center
   margin: 30px 0
   gap: 2rem
+  perspective: 1200px
 
   @media (max-width: 767px)
     justify-content: center
@@ -13,31 +14,21 @@
     gap: 1rem
     margin: 20px 0
 
-.portfolio-item
-  display: flex
-  align-items: center
-  justify-content: center
-  width: 200px
-  height: 60px
-  text-align: center
-  font-size: 16px
-  font-weight: 700
-  border: 2px solid $white
-  border-radius: 0
-  color: $white
-  cursor: pointer
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out
-  text-transform: uppercase
-
   &:hover
-    background-color: $highlight
-    border-color: $highlight
+    transform: scale(1.1) translateY(-10px) rotateY(0deg)
+    z-index: 2
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)
+
+  &:not(:hover)
+    transform: scale(0.95)
+    opacity: 0.85
+    filter: blur(0.5px)
 
 @media (max-width: 600px)
   .portfolio-item
     width: 150px
+    height: 150px
     font-size: 14px
-    height: 50px
 
 @keyframes modalFadeIn
   from
@@ -47,55 +38,88 @@
     opacity: 1
     transform: scale(1)
 
+.portfolio-grid
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+  gap: 2rem
+  justify-items: center
+  padding: 2rem
+  transition: all 0.3s ease
+
+.portfolio-item
+  display: flex
+  align-items: center
+  justify-content: center
+  background: #fff
+  color: #000
+  text-align: center
+  font-size: 16px
+  font-weight: 700
+  border: 2px solid $white
+  border-radius: 12px
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1)
+  cursor: pointer
+  transition: all 0.3s ease
+  text-transform: uppercase
+  padding: 1rem
+  width: 200px
+  height: 60px
+  box-sizing: border-box
+  transform-style: preserve-3d
+  backface-visibility: hidden
+
+  &:hover
+    width: 280px
+    height: 140px
+    z-index: 2
+    transform: scale(1.05)
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)
+    border-color: $highlight
+
+  &:not(:hover)
+    transform: scale(0.95)
+    opacity: 0.85
+    filter: blur(0.5px)
+
+
+  &:hover
+    width: 280px
+    height: 140px
+    z-index: 1
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)
+    border-color: $highlight
+
 .portfolio-modal
   display: none
   position: fixed
   top: 0
   left: 0
-  width: 100%
-  height: 100%
-  background: rgba(0, 0, 0, 0.8)
-  z-index: 1000
+  width: 100vw
+  height: 100vh
+  background-color: rgba(0, 0, 0, 0.8)
+  z-index: 9999
   justify-content: center
   align-items: center
   padding: 2rem
-  opacity: 0
-  transition: opacity 0.3s ease
-  pointer-events: none
-  backdrop-filter: blur(4px)
+  box-sizing: border-box
 
   &.show
     display: flex
-    opacity: 1
-    pointer-events: auto
+    animation: modalFadeIn 0.3s ease-out
 
-  &-content
-    background: #fff
-    color: #000
-    padding: 2rem
-    border-radius: 8px
-    max-width: 800px
-    width: 90%
-    max-height: 90%
-    overflow-y: auto
-    position: relative
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5)
-    animation: modalFadeIn 0.4s ease-out
+.portfolio-modal-content
+  background-color: #fff
+  color: #000
+  max-width: 600px
+  width: 100%
+  padding: 2rem
+  border-radius: 12px
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5)
+  position: relative
 
-    h3
-      margin-top: 0
-      font-size: 24px
-
-    p
-      line-height: 1.6
-      font-size: 16px
-      margin-top: 1rem
-
-    .close
-      position: absolute
-      top: 1rem
-      right: 1rem
-      font-size: 2rem
-      font-weight: bold
-      color: #000
-      cursor: pointer
+  .close
+    position: absolute
+    top: 1rem
+    right: 1rem
+    font-size: 1.5rem
+    cursor: pointer
