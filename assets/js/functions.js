@@ -2,6 +2,30 @@
 
 $( document ).ready(function() {
 
+  // Portfolio Modal
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const modalId = item.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      console.log('Clicked:', modalId, modal); // ➕ Ajout ici
+      if (modal) {
+        modal.classList.add('show');
+      }
+    });
+  });
+  
+  document.querySelectorAll('.portfolio-modal .close').forEach(close => {
+    close.addEventListener('click', () => {
+      close.closest('.portfolio-modal').classList.remove('show');
+    });
+  });
+  
+  window.addEventListener('click', e => {
+    if (e.target.classList.contains('portfolio-modal')) {
+      e.target.classList.remove('show');
+    }
+  });
+
   // DOMMouseScroll included for firefox support
   var canScroll = true,
       scrollController = null;
@@ -115,6 +139,8 @@ $( document ).ready(function() {
     }
 
   }
+
+  console.log("JS loaded");
 
   // sync side and outer navigations
   function updateNavs(nextPos) {
