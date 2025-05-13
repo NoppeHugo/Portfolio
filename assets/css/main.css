@@ -581,13 +581,7 @@ body {
   background-color: #282828;
 }
 .intro--banner::after {
-  content: "";
-  position: absolute;
-  bottom: 18px;
-  left: 0;
-  width: 30px;
-  height: 4px;
-  background-color: #C1542B;
+  display: none;
 }
 .intro--banner h1 {
   position: relative;
@@ -928,7 +922,7 @@ body {
 .about--banner .about--text {
   flex: 1 1 500px;
   margin-left: 8rem;
-  margin-top: 12rem;
+  margin-top: 4rem;
 }
 .about--banner img {
   width: 360px;
