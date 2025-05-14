@@ -89,6 +89,8 @@
   color: #000
   max-width: 900px
   width: 100%
+  max-height: 80vh             // ✅ limite la hauteur
+  overflow-y: auto             // ✅ scroll si nécessaire
   padding: 2.5rem
   border-radius: 16px
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5)
@@ -96,6 +98,7 @@
   display: flex
   flex-direction: column
   gap: 2rem
+  box-sizing: border-box
 
   .close
     position: absolute
@@ -135,7 +138,8 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1)
     width: 100%
     height: auto
-    max-width: 600px
+    max-width: 100%            // ✅ images s’adaptent
+    object-fit: contain
     margin: 0 auto
 
   .modal-image.preview
@@ -150,3 +154,7 @@
     padding-left: 1.5rem
     font-size: 1rem
     line-height: 1.6
+
+  body.modal-open
+    overflow: hidden
+
