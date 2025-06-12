@@ -1167,12 +1167,16 @@ body {
 @media (max-width: 480px) {
   .about {
     padding: 1.5rem 1rem !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    min-height: 100vh !important;
   }
   .about--banner {
     flex-direction: column !important;
     align-items: center !important;
     padding: 0 !important;
     margin-bottom: 2rem !important;
+    margin-top: 2.5rem !important;
   }
   .about--banner .about--text {
     margin: 0 !important;
