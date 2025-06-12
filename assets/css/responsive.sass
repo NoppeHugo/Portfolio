@@ -1,0 +1,72 @@
+// Correctifs globaux pour la responsivité mobile
+
+// 1. Box-sizing universel
+*, *::before, *::after
+  box-sizing: border-box
+
+// 2. Padding horizontal global sur mobile
+@media (max-width: 600px)
+  body, .l-wrapper, .l-main-content, .l-section, .intro, .work, .about, .hire, .contact
+    padding-left: 0.5rem !important
+    padding-right: 0.5rem !important
+
+// 3. Images responsives
+img, .modal-image, .slider--item-image img
+  max-width: 100%
+  height: auto
+  display: block
+
+// 4. Boutons et liens tactiles
+@media (max-width: 600px)
+  button, .cta, a, .portfolio-item
+    min-width: 44px
+    min-height: 44px
+    font-size: 1rem
+    padding: 0.5rem 0.75rem
+    border-radius: 8px
+    text-align: center
+
+// 5. Désactiver les effets hover sur mobile
+@media (hover: none) and (pointer: coarse)
+  a:hover, button:hover, .portfolio-item:hover
+    filter: none !important
+    background: inherit !important
+    color: inherit !important
+    box-shadow: none !important
+    transform: none !important
+
+// 6. Modales portfolio : padding et scroll sur mobile
+@media (max-width: 600px)
+  .portfolio-modal-content
+    padding: 1rem !important
+    max-width: 98vw !important
+    font-size: 0.95rem
+    h3
+      font-size: 1.2rem
+    .modal-image
+      max-width: 100% !important
+      height: auto !important
+    .modal-section
+      gap: 0.5rem
+    ul, .modal-list
+      font-size: 0.95rem
+      padding-left: 1rem
+
+// 7. Forcer la visibilité du menu hamburger sur mobile
+@media (max-width: 1180px)
+  .header--nav-toggle
+    display: flex !important
+    z-index: 100
+
+// 8. Accessibilité : augmenter la taille des liens de navigation mobile
+@media (max-width: 767px)
+  .outer-nav > li
+    min-height: 44px
+    font-size: 1.1rem
+    display: flex
+    align-items: center
+    justify-content: center
+
+// 9. Empêcher le scroll horizontal
+html, body
+  overflow-x: hidden 
