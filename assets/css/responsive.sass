@@ -69,4 +69,53 @@ img, .modal-image, .slider--item-image img
 
 // 9. Empêcher le scroll horizontal
 html, body
-  overflow-x: hidden 
+  overflow-x: hidden
+
+// 10. Ajustements pour les tablettes
+@media (min-width: 768px) and (max-width: 1024px)
+  .l-wrapper
+    padding: 0 1rem
+  .about--banner
+    padding-left: 2rem
+    padding-right: 2rem
+  .portfolio-grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 1.5rem
+
+// 11. Optimisations pour les grands écrans
+@media (min-width: 1440px)
+  .l-wrapper
+    max-width: 1400px
+    margin: 0 auto
+  .about--banner
+    max-width: 1300px
+  .portfolio-grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 2rem
+
+// 12. Ajustements de typographie responsive
+@media (max-width: 480px)
+  h1
+    font-size: 2rem !important
+  h2
+    font-size: 1.5rem !important
+  h3
+    font-size: 1.2rem !important
+  p, li
+    font-size: 0.95rem !important
+
+// 13. Optimisations pour les petits écrans
+@media (max-width: 360px)
+  .about--banner
+    padding: 1rem !important
+  .portfolio-item
+    margin-bottom: 1rem !important
+  .contact-form
+    padding: 1rem !important
+
+// 14. Améliorations de l'accessibilité tactile
+@media (hover: none)
+  .portfolio-item, .nav-link, .cta
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent
+    touch-action: manipulation 

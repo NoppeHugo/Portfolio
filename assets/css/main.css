@@ -707,13 +707,49 @@ body {
 }
 @media (max-width: 600px) {
   .intro--banner {
-    height: 360px;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 0.5rem !important;
+    height: auto;
   }
-  .intro--banner h1 {
-    font-size: 55px;
+  .intro--banner .intro--text {
+    flex: 1 1 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
-  .intro--banner img {
-    display: none;
+  .intro--banner .intro--text h1 {
+    font-size: 0.85rem !important;
+    text-align: left !important;
+    margin: 0 0 0.5rem 0 !important;
+  }
+  .intro--banner .intro--text button {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 8px 0;
+    margin-top: 0.5rem;
+  }
+  .intro--banner .intro--img {
+    flex: 0 0 80px;
+    width: 110px !important;
+    height: 110px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    margin-left: 1rem !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    display: block !important;
+    position: static !important;
+  }
+  .intro--options {
+    margin-top: 1.5rem !important;
+    font-size: 0.75rem !important;
+    text-align: left !important;
+  }
+  .intro--options a, .intro--options h3, .intro--options p {
+    font-size: 0.75rem !important;
   }
 }
 @media (max-width: 600px) and (max-height: 750px) {
@@ -732,63 +768,46 @@ body {
 }
 @media (max-width: 480px) {
   .intro {
-    padding: 1.5rem 1rem !important;
-    min-height: 100vh !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
+    padding: 0 0.5rem;
   }
   .intro--banner {
-    flex-direction: column !important;
-    align-items: center !important;
-    padding: 0 !important;
-    margin-bottom: 2rem !important;
-    position: relative !important;
-    min-height: unset !important;
+    height: auto;
+    padding: 0;
   }
   .intro--banner h1 {
-    font-size: 1.5rem !important;
-    margin: 1.2rem 0 1rem 0 !important;
-    line-height: 1.1 !important;
+    font-size: 1.3rem !important;
     text-align: center !important;
+    margin: 1.5rem 0 1rem 0 !important;
   }
-  .intro--banner .intro--img,
   .intro--banner img {
+    display: block !important;
+    position: static !important;
+    margin: 1rem auto 1.5rem auto !important;
     width: 90px !important;
     height: 90px !important;
-    margin: 1rem auto 1rem auto !important;
-    display: block !important;
     border-radius: 50% !important;
     object-fit: cover !important;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   }
-  .intro--banner button,
-  .intro--banner .cta {
-    width: 100% !important;
-    font-size: 1rem !important;
-    padding: 0.7rem 0 !important;
-    margin: 0.5rem 0 1rem 0 !important;
-    border-radius: 8px !important;
-    text-align: center !important;
+  .intro--banner button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 8px 0;
   }
   .intro--options {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 0.5rem !important;
+    display: block;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   .intro--options > a {
-    max-width: 100% !important;
-    margin: 0 0 10px 0 !important;
-    font-size: 0.95rem !important;
+    max-width: 100%;
+    font-size: 0.95rem;
+    margin: 0 0 15px 0;
+    padding: 0.5rem;
+    text-align: center;
   }
   .intro--options > a:last-child {
-    margin-bottom: 0 !important;
-  }
-  .intro--options h3 {
-    font-size: 1rem !important;
-  }
-  .intro--options p {
-    font-size: 0.95rem !important;
+    margin-bottom: 0;
   }
 }
 .work {
@@ -1173,6 +1192,32 @@ body {
   .about--options {
     display: none;
   }
+  .about--description {
+    font-size: 0.7rem !important;
+    line-height: 1.2 !important;
+    margin: 0 auto 0.6rem auto !important;
+    padding: 0 0.1rem !important;
+  }
+  .about--description p, .about--description a, .about--description strong {
+    font-size: 0.7rem !important;
+  }
+  .about--text h2 {
+    font-size: 1.1rem !important;
+    line-height: 1.1 !important;
+    margin: 1.2rem 0 0.8rem 0 !important;
+  }
+  .about--options {
+    font-size: 0.7rem !important;
+  }
+  .about--options a, .about--options h1, .about--options h2, .about--options h3, .about--options p, .about--options strong, .about--options .option-block {
+    font-size: 0.7rem !important;
+  }
+  .about .option-block {
+    font-size: 0.7rem !important;
+  }
+  .about .option-block h1, .about .option-block h2, .about .option-block h3, .about .option-block p, .about .option-block strong {
+    font-size: 0.7rem !important;
+  }
 }
 @media (max-width: 480px) {
   .about {
@@ -1209,12 +1254,20 @@ body {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   }
   .about--description {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
     margin: 0 auto 1.5rem auto !important;
     padding: 0 0.5rem !important;
   }
-  .about--description .cv-button {
+  .about--description p, .about--description a, .about--description strong {
+    font-size: 0.95rem !important;
+  }
+  .about--text h2 {
+    font-size: 1.3rem !important;
+    line-height: 1.1 !important;
+    margin: 1.5rem 0 1rem 0 !important;
+  }
+  .about--text h2 .cv-button {
     display: inline-block;
     margin: 1rem 0 1.5rem 0;
     padding: 0.6rem 1.2rem;
@@ -1848,4 +1901,63 @@ img, .modal-image, .slider--item-image img {
 }
 html, body {
   overflow-x: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .l-wrapper {
+    padding: 0 1rem;
+  }
+  .about--banner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .l-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .about--banner {
+    max-width: 1300px;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  h3 {
+    font-size: 1.2rem !important;
+  }
+  p, li {
+    font-size: 0.95rem !important;
+  }
+}
+@media (max-width: 360px) {
+  .about--banner {
+    padding: 1rem !important;
+  }
+  .portfolio-item {
+    margin-bottom: 1rem !important;
+  }
+  .contact-form {
+    padding: 1rem !important;
+  }
+}
+@media (hover: none) {
+  .portfolio-item, .nav-link, .cta {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
 }
