@@ -140,12 +140,15 @@
 
 @media (max-width: 600px)
   .intro
+    justify-content: flex-start !important
+    height: auto !important
     &--banner
       display: flex !important
       flex-direction: row !important
       align-items: center !important
       justify-content: space-between !important
       padding: 0 0.5rem !important
+      padding-top : 4rem !important
       height: auto
       .intro--text
         flex: 1 1 60%
@@ -154,7 +157,7 @@
         align-items: flex-start
         justify-content: center
         h1
-          font-size: 0.85rem !important
+          font-size: 1.2rem !important
           text-align: left !important
           margin: 0 0 0.5rem 0 !important
         button
@@ -164,8 +167,10 @@
           margin-top: 0.5rem
       .intro--img
         flex: 0 0 80px
-        width: 110px !important
-        height: 110px !important
+        max-width: 220px
+        max-height: 220px
+        width: 100%
+        height: auto
         border-radius: 50% !important
         object-fit: cover !important
         margin-left: 1rem !important
@@ -231,3 +236,66 @@
         text-align: center
         &:last-child
           margin-bottom: 0
+
+.intro--img
+  max-width: 320px !important
+  max-height: 320px !important
+  width: 100%
+  height: auto
+  display: block
+  border-radius: 50% !important
+  object-fit: cover !important
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15)
+  position: static
+  margin-left: 0
+  margin-right: 0
+
+@media (min-width: 900px)
+  .intro--img
+    max-width: 320px !important
+    max-height: 320px !important
+    width: 100%
+    height: auto
+    display: block
+    border-radius: 50% !important
+    object-fit: cover !important
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15)
+    position: static
+    margin-left: 0 !important
+    margin-right: 0 !important
+
+@media (min-width: 600px) and (max-width: 767px)
+  .intro
+    padding: 2rem 1rem !important
+    &--banner
+      flex-direction: column !important
+      align-items: center !important
+      gap: 1.2rem !important
+      padding: 0 1rem !important
+      height: auto !important
+      .intro--text
+        margin: 0 !important
+        padding: 0 !important
+        width: 100% !important
+        text-align: center !important
+        h1
+          font-size: 1.7rem !important
+          margin: 1.2rem 0 1rem 0 !important
+          line-height: 1.1 !important
+      .intro--img
+        width: 100px !important
+        height: 100px !important
+        margin: 1rem auto 1rem auto !important
+        display: block !important
+        border-radius: 50% !important
+        object-fit: cover !important
+        box-shadow: 0 2px 12px rgba(0,0,0,0.15)
+    &--options
+      display: flex !important
+      flex-direction: row !important
+      flex-wrap: wrap !important
+      gap: 1.2rem !important
+      justify-content: center !important
+      font-size: 0.85rem !important
+      a, h3, p
+        font-size: 0.85rem !important

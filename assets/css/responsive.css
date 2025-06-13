@@ -1,0 +1,133 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  body, .l-wrapper, .l-main-content, .l-section, .intro, .work, .about, .hire, .contact {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+img, .modal-image, .slider--item-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  button, .cta, a, .portfolio-item {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  a:hover, button:hover, .portfolio-item:hover {
+    filter: none !important;
+    background: inherit !important;
+    color: inherit !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+}
+@media (max-width: 600px) {
+  .portfolio-modal-content {
+    padding: 1rem !important;
+    max-width: 98vw !important;
+    font-size: 0.95rem;
+  }
+  .portfolio-modal-content h3 {
+    font-size: 1.2rem;
+  }
+  .portfolio-modal-content .modal-image {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .portfolio-modal-content .modal-section {
+    gap: 0.5rem;
+  }
+  .portfolio-modal-content ul, .portfolio-modal-content .modal-list {
+    font-size: 0.95rem;
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 1180px) {
+  .header--nav-toggle {
+    display: flex !important;
+    z-index: 100;
+  }
+}
+@media (max-width: 767px) {
+  .outer-nav > li {
+    min-height: 44px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+html, body {
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .l-wrapper {
+    padding: 0 1rem;
+  }
+  .about--banner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .l-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .about--banner {
+    max-width: 1300px;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  h3 {
+    font-size: 1.2rem !important;
+  }
+  p, li {
+    font-size: 0.95rem !important;
+  }
+}
+@media (max-width: 360px) {
+  .about--banner {
+    padding: 1rem !important;
+  }
+  .portfolio-item {
+    margin-bottom: 1rem !important;
+  }
+  .contact-form {
+    padding: 1rem !important;
+  }
+}
+@media (hover: none) {
+  .portfolio-item, .nav-link, .cta {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}

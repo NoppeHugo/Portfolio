@@ -45,9 +45,30 @@
       background-color: $highlight
 
     .about--text
-      flex: 1 1 500px
-      margin-left: 8rem
-      margin-top: 4rem
+      flex: 1 1 
+      margin-left: 0 
+      margin-top: 0.5rem 
+      margin-bottom: 0 !important
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: flex-start
+      gap: 1rem
+
+      h2
+        margin: 0
+        flex: 1 1 auto
+
+      .about--img
+        flex: 0 0 auto
+        width: 90px
+        height: 90px
+        border-radius: 50%
+        object-fit: cover
+        margin-left: 1rem
+        box-shadow: 0 2px 12px rgba(0,0,0,0.15)
+        display: block
+        position: static
 
     img
       width: 360px
@@ -108,7 +129,7 @@
     line-height: 1.6
     color: white
     text-align: left
-    margin-top: 0
+    margin-top: 0.2rem !important
     margin-left: 0
     animation: fadeUp 0.8s ease-out forwards
     opacity: 0
@@ -276,12 +297,11 @@
   .about--description
     font-size: 0.95rem !important
     line-height: 1.5 !important
-    margin: 0 auto 1.5rem auto !important
     padding: 0 0.5rem !important
     p, a, strong
       font-size: 0.95rem !important
   .about--text h2
-    font-size: 1.3rem !important
+    font-size: 1.2rem !important
     line-height: 1.1 !important
     margin: 1.5rem 0 1rem 0 !important
 
@@ -297,9 +317,78 @@
       text-decoration: none
       box-shadow: 0 2px 8px rgba(0,0,0,0.08)
 
+@media (min-width: 600px) and (max-width: 767px)
+  .about
+    padding: 2rem 1rem !important
+    &--banner
+      flex-direction: column !important
+      align-items: center !important
+      gap: 1.2rem !important
+      padding: 0 1rem !important
+      margin-bottom: 2rem !important
+      .about--text
+        margin: 0 !important
+        padding: 0 !important
+        width: 100% !important
+        text-align: center !important
+        h2
+          font-size: 1.7rem !important
+          margin: 1.2rem 0 1rem 0 !important
+          line-height: 1.1 !important
+      .about--img
+        width: 100px !important
+        height: 100px !important
+        margin: 1rem auto 1rem auto !important
+        display: block !important
+        border-radius: 50% !important
+        object-fit: cover !important
+        box-shadow: 0 2px 12px rgba(0,0,0,0.15)
+    &--description
+      font-size: 0.95rem !important
+      line-height: 1.4 !important
+      padding: 0 0.5rem !important
+      margin: 0 auto 1rem auto !important
+      opacity: 1 !important
+      transform: none !important
+      p, a, strong
+        font-size: 0.95rem !important
+    &--options
+      display: flex !important
+      flex-direction: row !important
+      flex-wrap: wrap !important
+      gap: 1.2rem !important
+      justify-content: center !important
+      font-size: 0.85rem !important
+      a, h1, h2, h3, p, strong, .option-block
+        font-size: 0.85rem !important
+    .option-block
+      font-size: 0.85rem !important
+      h1, h2, h3, p, strong
+        font-size: 0.85rem !important
+
+@media (min-width: 1150px)
+  .about
+    flex-direction: column !important
+    align-items: center !important
+    justify-content: flex-start !important
+    &--banner
+      flex-direction: column !important
+      align-items: center !important
+      gap: 2rem !important
+      padding-top: 8rem !important
+      padding-left: 0 !important
+      padding-right: 0 !important
+      margin-bottom: 2rem !important
+    &--description
+      margin: 0 auto 1rem auto !important
+      text-align: center !important
+    &--options
+      justify-content: center !important
+      gap: 2rem !important
+
 @keyframes fadeUp
   0%
-    opacity: 0
+    opacity: 0 
     transform: translateY(20px)
   100%
     opacity: 1
